@@ -8,6 +8,7 @@ the 'data' directory.
 """
 
 def main():
+    # File will be created in the 'data_created' directory
     results_file_name = "generated-rules.csv"
     run_apriori(results_file_name)
     
