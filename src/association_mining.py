@@ -36,9 +36,10 @@ def inspect(results, name_map):
     rule_length = [len(result[0]) for result in results]
     return list(zip(lhs, rhs, supports, confidences, lifts, rule_length))
 
-def run_apriori():
+def run_apriori(results_file_name: str):
     """
     Run the apriori function from the apyori library and create a csv file with the results.
+    :param results_file_name: The file name of the resulting csv
     """
     
     # Get transactions
@@ -79,7 +80,7 @@ def run_apriori():
     complex_rules['Support_Confidence_Score'] = (complex_rules['Support'] ** 2) * complex_rules['Confidence']
     
     # Put results in output csv file
-    output_path = "data_created/non-weekend-generated-rules.csv"
+    output_path = f"data_created/{results_file_name}"
     top_rules = complex_rules.nlargest(n=100000, columns='Lift')
     top_rules.to_csv(output_path, index=False)
     
