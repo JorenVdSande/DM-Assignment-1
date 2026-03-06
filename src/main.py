@@ -2,6 +2,9 @@ from src.association_mining import run_apriori
 
 """
 Make sure to set the working directory to the root of these project files (DM-Assignment-1)
+
+Add the {aisles.csv, departments.csv, order_products.csv, orders.csv, products.csv} files to
+the 'data' directory.
 """
 
 def main():
